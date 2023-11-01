@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Люди</title>
+    <link rel="stylesheet" href="../static/styles.css" th:href="@{/styles.css}">
+</head>
+<body>
+<div th:each="people : ${peopleList}">
+    <a th:href="@{/home/indexPeople/showPeople/{id}(id=${people.getPeopleID()})}" th:text="${people.getFullName()}">people</a>
+</div>
+<form method="post" action="/home/CRUDresult">
+    <label><input name="param1">ФИО человека</label>
+    <label><input name="param2">Возраст человека</label>
+    <label><input name="param3">Электронная почта</label>
+    <label><input name="param4">Дата рождения</label>
+    <input hidden value="p" name="type5">
+    <button>Добавить</button>
+</form>
+<div class="navigation">
+    <form method="get" action="/">
+        <button>Назад</button>
+    </form>
+</div>
+</body>
+</html>

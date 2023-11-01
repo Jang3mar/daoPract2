@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../static/styles.css" th:href="@{/styles.css}">
+</head>
+<body>
+<div th:each="books : ${booksList}">
+    <a th:href="@{/home/indexBook/showBook/{id}(id=${books.getBooksID()})}" th:text="${books.getBookName()}">book</a>
+</div>
+<form method="post" action="/home/CRUDresult">
+    <label><input name="param1">Название книги</label>
+    <label><input name="param2">Автор книги</label>
+    <label><input name="param3">Год издательства</label>
+    <label><input name="param4">Количество страниц</label>
+    <input hidden value="b" name="type5">
+    <button>Добавить</button>
+</form>
+<div class="navigation">
+    <form method="get" action="/">
+        <button>Назад</button>
+    </form>
+</div>
+</body>
+</html>

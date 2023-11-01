@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Машины</title>
+    <link rel="stylesheet" href="../static/styles.css" th:href="@{/styles.css}">
+</head>
+<body>
+<div th:each="cars : ${carsList}">
+    <a th:href="@{/home/indexCar/showCar/{id}(id=${cars.getCarsID()})}" th:text="${cars.getCarModel()}">car</a>
+</div>
+<form method="post" action="/home/CRUDresult">
+    <label><input name="param1">Модель автомобиля</label>
+    <label><input name="param2">Номер автомобиля</label>
+    <label><input name="param3">Стоимость автомобиля</label>
+    <label><input name="param4">Цвет автомобиля</label>
+    <input hidden value="c" name="type5">
+    <button>Добавить</button>
+</form>
+<div class="navigation">
+    <form method="get" action="/">
+        <button>Назад</button>
+    </form>
+</div>
+</body>
+</html>

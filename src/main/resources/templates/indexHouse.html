@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Дома</title>
+    <link rel="stylesheet" href="../static/styles.css" th:href="@{/styles.css}">
+</head>
+<body>
+<div th:each="houses : ${housesList}">
+        <a th:href="@{/home/indexHouse/showHouse/{id}(id=${houses.getHousesID()})}" th:text="${houses.getAddress()}">house</a>
+</div>
+<form method="post" action="/home/CRUDresult">
+    <label><input name="param1">Адрес</label>
+    <label><input name="param2">Количество этажей</label>
+    <label><input name="param3">Цвет дома</label>
+    <label><input name="param4">Стоимость дома</label>
+    <input hidden value="h" name="type5">
+    <button>Добавить</button>
+</form>
+<div class="navigation">
+    <form method="get" action="/">
+        <button>Назад</button>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Животные</title>
+    <link rel="stylesheet" href="../static/styles.css" th:href="@{/styles.css}">
+</head>
+<body>
+<div th:each="animals : ${animalsList}">
+        <a th:href="@{/home/indexAnimal/showAnimal/{id}(id=${animals.getAnimalID()})}" th:text="${animals.getAnimalName()}">animal</a>
+</div>
+<form method="post" action="/home/CRUDresult">
+    <label><input name="param1">Тип животного</label>
+    <label><input name="param2">Кличка животного</label>
+    <label><input name="param3">Возраст животного</label>
+    <label><input name="param4">Цвет животного</label>
+    <input hidden value="a" name="type5">
+    <button>Добавить</button>
+</form>
+<div class="navigation">
+    <form method="get" action="/">
+        <button>Назад</button>
+    </form>
+</div>
+</body>
+</html>

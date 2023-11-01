@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Главная</title>
+    <link rel="stylesheet" href="../static/styles.css" th:href="@{/styles.css}">
+</head>
+<body>
+<div class="navigation">
+    <form method="get" action="/home/indexPeople">
+        <button>Люди</button>
+    </form>
+    <form method="get" action="/home/indexAnimal">
+        <button>Животные</button>
+    </form>
+    <form method="get" action="/home/indexCar">
+        <button>Машины</button>
+    </form>
+    <form method="get" action="/home/indexHouse">
+        <button>Дома</button>
+    </form>
+    <form method="get" action="/home/indexBook">
+        <button>Книги</button>
+    </form>
+</div>
+</body>
+</html>
